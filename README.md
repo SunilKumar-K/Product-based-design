@@ -25,13 +25,13 @@ This is a solution to the [Product preview card component challenge on Frontend 
 
 ### Screenshot
 
-![ScreenShot]()
+![ScreenShot](https://github.com/HumbleFool830/Product-based-design/blob/main/images/Screenshot%20(8).png)
 
 
 
 ### Links
 
-- Solution URL: [solution URL here](https://your-solution-url.com)
+- Solution URL: [solution URL here](https://github.com/HumbleFool830/Product-based-design/)
 - Live Site URL: [live site URL here](https://your-live-site-url.com)
 
 ## My process
