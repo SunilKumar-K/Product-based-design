@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <script src="https://kit.fontawesome.com/078b182ba4.js" crossorigin="anonymous"></script>
+  <script src="btn cart.js"></script>
+  
+  <title>Frontend Mentor | Product preview card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    /* Dark cyan: hsl(158, 36%, 37%)
+- Cream: hsl(30, 38%, 92%)
+### Neutral
+- Very dark blue: hsl(212, 21%, 14%)
+- Dark grayish blue: hsl(228, 12%, 48%)
+- White: hsl(0, 0%, 100%) */
+
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  background-color: hsl(30, 38%, 92%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 0.1px);
+  margin: 0 1.5rem;
+}
+
+button,
+li {
+  font-family: inherit;
+}
+
+h1 {
+  color: hsl(212, 21%, 14%);
+}
+
+.price {
+  color: hsl(158, 36%, 37%);
+}
+
+h1,
+.price {
+  font-family: "Fraunces", sans-serif;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: hsl(228, 12%, 48%);
+  margin-bottom: 1rem;
+  letter-spacing: 0.2rem;
+}
+
+p {
+  color: hsl(228, 12%, 48%);
+  line-height: 1.8;
+}
+
+.container {
+  max-width: 600px;
+}
+
+.container h1 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.container article:first-child img {
+  border-radius: 1rem 1rem 0 0;
+}
+
+.container article:last-child {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 0 0 1rem 1rem;
+  margin-top: -1rem;
+}
+
+.container p {
+  margin-bottom: 2rem;
+}
+
+.container ul {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.container ul li:first-child {
+  font-size: 2rem;
+  margin-right: 1.5rem;
+}
+
+.container ul li:nth-child(2) {
+  color: hsl(228, 12%, 48%);
+}
+
+.container .btn {
+  background-color: hsl(158, 36%, 37%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 1rem 2rem;
+  width: 100%;
+  border: none;
+  border-radius: 0.625rem;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container .btn:hover {
+  background-color: hsl(158, 38%, 20%);
+}
+
+.container .btn img {
+  margin-right: 0.5rem;
+}
+
+.attribution {
+  font-size: 15px;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 640px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .container article:first-child img {
+    border-radius: 0.625rem 0 0 0.625rem;
+    width: 100%;
+  }
+
+  .container article:last-child {
+    border-radius: 0 0.625rem 0.625rem 0;
+    margin-top: 0;
+    padding: 1.5rem 1.5rem 0;
+  }
+
+  picture img {
+    height: 100%;
+  }
+
+  .container p {
+    margin-bottom: 1rem;
+  }
+}
+
+/* btn animation*/
+.buttons{margin: 0;padding: 0;height: 35px; width:auto;display: flex;justify-content: center;align-items: center}
+.cart-button{position: relative;outline: 0;background-color: hsl(157, 81%, 14%);;color: #fff;border: none;height: 48px;width: 200px;padding: 10px;border-radius: 10px;line-height: 0px;overflow: hidden;cursor:pointer}
+.cart-button:focus{outline: none !important}
+.cart-button .fa-shopping-cart{position: absolute;z-index: 2;top: 50%;left: -20%;font-size: 1.8em;transform: translate(-55%, -50%)}
+.cart-button .fa-square{position: absolute;z-index: 1;top: -20%;left: 53%;font-size: 0.8em;transform: translate(-50%, -50%)}.cart-button span{position: absolute;left: 50%;top: 50%;color: #fff;transform: translate(-50%, -50%)}.cart-button span.added{opacity: 0}.cart-button.clicked .fa-shopping-cart{animation: cart 2s ease-in forwards}.cart-button.clicked .fa-square{animation: box 2s ease-in forwards}.cart-button.clicked span.add-to-cart{animation: addcart 2s ease-in forwards}.cart-button.clicked span.added{animation: added 2s ease-in forwards}@keyframes cart{0%{left: -10%}40%, 60%{left: 50%}100%{left: 110%}}@keyframes box{0%, 40%{top: -20%}60%{top: 36%;left: 53%}100%{top: 40%;left: 112%}}
+@keyframes addcart{0%, 30%{opacity: 1}30%, 100%{opacity: 0}}
+@keyframes added{0%, 80%{opacity: 0}100%{opacity: 1}}
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <article>
+      <picture>
+        <source
+          media="(min-width: 640px)"
+          srcset="./images/image-product-desktop.jpg"
+        />
+        <img src="./images/image-product-mobile.jpg" alt="" />
+      </picture>
+    </article>
+
+    <article>
+      <h2>perfume</h2>
+
+      <h1>Gabrielle Essence Eau De Parfum</h1>
+
+      <p>
+        A floral, solar and voluptuous interpretation composed by Olivier
+        Polge, Perfumer-Creator for the House of CHANEL.
+      </p>
+
+      <ul>
+        <li class="price">$149.99</li>
+        <li><s>$169.99</s></li>
+      </ul>
+
+      <div class="buttons"> 
+        <button class="cart-button"> 
+          <span class="add-to-cart"><img src="./images/icon-cart.svg" alt="" /> Add to cart</span> 
+          <span class="added">Item added</span> 
+          <i class="fa fa-shopping-cart"></i>
+          <i class="fa fa-square"></i> 
+        </button> 
+      </div>
+    </article>
+  </div>
+
+  <div class="attribution">
+    Challenge by
+    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+      >Frontend Mentor</a
+    >. Coded by <a href="https://github.com/HumbleFool830" target="_blank">Humble Fool</a>.
+  </div>
+</body>
+</html>
