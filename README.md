@@ -32,7 +32,7 @@ This is a solution to the [Product preview card component challenge on Frontend 
 ### Links
 
 - Solution URL: [solution URL here](https://github.com/HumbleFool830/Product-based-design/)
-- Live Site URL: [live site URL here](https://your-live-site-url.com)
+- Live Site URL: [live site URL here](https://product-based-design.netlify.app/)
 
 ## My process
 
